@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  config-server:
+     image: mycompany/firstspringconfigurationserver:0.0.1-SNAPSHOT
+     container_name: config-server
+     ports:
+       - "8071:8071"
+     networks:
+       backend:
+         aliases:
+             - "config-server"
+
+networks:
+   backend:
+     driver: bridge
