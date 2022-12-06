@@ -1,8 +1,12 @@
-version: "3.9"
+version: "3.7"
 services:
   config-server:
      image: mycompany/firstspringconfigurationserver:0.0.1-SNAPSHOT
      container_name: config-server
+     environment:
+       - SPRING_PROFILES_ACTIVE=native
+       - SPRING_APPLICATION_NAME=config-server
+       - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH-LOCATIONS=classpath:/config
      ports:
        - "8071:8071"
      networks:
