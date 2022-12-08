@@ -4,8 +4,9 @@ services:
      image: mycompany/firstspringconfigurationserver:0.0.1-SNAPSHOT
      container_name: config-server
      environment:
-       - SPRING_PROFILES_ACTIVE=git,vault
+       - SPRING_PROFILES_ACTIVE=native,git,vault
        - SPRING_APPLICATION_NAME=config-server
+       - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH-LOCATIONS=classpath:/config
        - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/zakaria-shahen/firstspringconfigurationserver
        - SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH-PATH=src/main/resources/config
        - SPRING_CLOUD_CONFIG_SERVER_VAULT_HOST=vault
